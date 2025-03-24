@@ -78,7 +78,7 @@ type (
 		onEvent          map[string]*callback
 		log              Logger
 		closed           bool
-		httpClient       *http.Client
+		HttpClient       *http.Client
 	}
 
 	callback struct {
@@ -113,7 +113,7 @@ func NewEventSource() *EventSource {
 		retryMaxWaitTime: defaultMaxWaitTime,
 		maxBufSize:       defaultSseMaxBufSize,
 		onEvent:          make(map[string]*callback),
-		httpClient: &http.Client{
+		HttpClient: &http.Client{
 			Jar:       createCookieJar(),
 			Transport: createTransport(nil, nil),
 		},
@@ -467,7 +467,7 @@ func (es *EventSource) connect() (*http.Response, error) {
 			break
 		}
 
-		resp, doErr := es.httpClient.Do(req)
+		resp, doErr := es.HttpClient.Do(req)
 		if resp != nil && resp.StatusCode == http.StatusOK {
 			return resp, nil
 		}
