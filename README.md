@@ -29,6 +29,7 @@ Use `go1.21` and above.
 
 Resty releases versions according to [Semantic Versioning](http://semver.org)
 
+  * Resty v3 modded enables the setting of TLS certificate for SSE client.
   * Resty v3 provides Go Vanity URL `resty.dev/v3`.
   * Resty v2 migrated away from `gopkg.in` service, `github.com/go-resty/resty/v2`.
   * Resty fully adapted to `go mod` capabilities since `v1.10.0` release.
